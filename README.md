@@ -49,6 +49,7 @@ If you want to run the latest code from git, here's how to get started:
 
         node red.js
 
+5. Run the Main.py on the device you want the visual logs from. Install websocket python using pip.
 ## Contributing
 
 Before raising a pull-request, please read our
