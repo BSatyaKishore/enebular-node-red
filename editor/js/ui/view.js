@@ -2067,6 +2067,7 @@ RED.view = (function() {
                     //node.append("path").attr("class","node_error").attr("d","M 3,-3 l 10,0 l -5,-8 z");
 
                     //TODO: these ought to be SVG
+                    console.log(node, node[0], node[0][0].id) //.id, node.x, node.y, node.z);
                     node.append("image").attr("class","node_error hidden").attr("xlink:href","icons/node-red/node-error.png").attr("x",0).attr("y",-6).attr("width",10).attr("height",9);
                     node.append("image").attr("class","node_changed hidden").attr("xlink:href","icons/node-red/node-changed.png").attr("x",12).attr("y",-6).attr("width",10).attr("height",10);
             });
@@ -2194,9 +2195,10 @@ RED.view = (function() {
 
                             thisNode.selectAll(".node_tools").attr("x",function(d){return d.w-35;}).attr("y",function(d){return d.h-20;});
 
+                            // Send to milkcocoa here
                             thisNode.selectAll(".node_changed")
                                 .attr("x",function(d){return d.w-10})
-                                .classed("hidden",function(d) { return !(d.changed||d.moved); });
+                                .classed("hidden",function(d) { console.log(d); return !(d.changed||d.moved); });
 
                             thisNode.selectAll(".node_error")
                                 .attr("x",function(d){return d.w-10-((d.changed||d.moved)?13:0)})

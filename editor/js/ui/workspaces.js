@@ -263,6 +263,7 @@ RED.workspaces = (function() {
                 }
             },
             onreorder: function(oldOrder, newOrder) {
+                //console.log('Here 1')
                 RED.history.push({t:'reorder',order:oldOrder,dirty:RED.nodes.dirty()});
                 RED.nodes.dirty(true);
                 setWorkspaceOrder(newOrder);

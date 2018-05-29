@@ -182,11 +182,13 @@ RED.nodes = (function() {
         return exports;
     })();
 
+    // Update this funtion a little to make it deterministic across multiple machines => Hash Function
     function getID() {
         return (1+Math.random()*4294967295).toString(16);
     }
 
     function addNode(n) {
+        console.log('AddNode',n);
         if (n.type.indexOf("subflow") !== 0) {
             n["_"] = n._def._;
         } else {
@@ -233,10 +235,12 @@ RED.nodes = (function() {
     }
 
     function removeNode(id) {
+        console.log('RemoveNode', id);
         var removedLinks = [];
         var removedNodes = [];
         var node;
         if (id in configNodes) {
+            console.log('I am here');
             node = configNodes[id];
             delete configNodes[id];
             RED.events.emit('nodes:remove',node);

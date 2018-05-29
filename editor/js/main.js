@@ -479,6 +479,7 @@
         RED.actions.add("core:show-about", showAbout);
         RED.nodes.init();
         RED.comms.connect();
+        // RED.nodes.removeNode("38dd7264.1cdabe");
 
         $("#main-container").show();
         $(".header-toolbar").show();
